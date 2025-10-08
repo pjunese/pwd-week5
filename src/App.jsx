@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+//import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -35,7 +36,8 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <HashRouter>
+     {/*<HashRouter>*/ }
+     <BrowserRouter>
         <GlobalStyles />
         <div className="app">
           <Header />
@@ -67,7 +69,8 @@ function App() {
           pauseOnHover
           theme="light"
         />
-      </HashRouter>
+      {/*</HashRouter>*/}
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }
