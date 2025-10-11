@@ -19,6 +19,18 @@ exports.getRestaurants = asyncHandler(async (req, res) => {
   res.json({ data: restaurants });
 });
 
+exports.getRestaurantsSyncDemo = (req, res) => {
+    const restaurants = restaurantService.getAllRestaurantsSync();
+    res.json({
+      data: restaurants,
+      meta: {
+        execution: 'synchronous',
+        count: restaurants.length,
+      },
+    });
+  };
+  
+
 exports.getPopularRestaurants = asyncHandler(async (req, res) => {
   const limit = Number(req.query.limit) || 5;
   const restaurants = await restaurantService.getPopularRestaurants(limit);

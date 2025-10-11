@@ -8,6 +8,7 @@ const router = express.Router();
 // 인기 맛집
 router.get('/popular', restaurantsController.getPopularRestaurants);
 router.get('/', restaurantsController.getRestaurants);
+router.get('/sync-demo', restaurantsController.getRestaurantsSyncDemo);
 router.get('/:id', restaurantsController.getRestaurant);
 router.post('/', restaurantsController.createRestaurant);
 router.put('/:id', restaurantsController.updateRestaurant);
